@@ -1,0 +1,112 @@
+{
+    "editor.largeFileOptimizations": false,
+    "editor.maxTokenizationLineLength": 9999999999,
+    "git.openRepositoryInParentFolders": "never",
+    "window.zoomLevel": 2,
+    "cmake.configureOnOpen": true,
+
+    //////////////////////////////////////////////////////////////
+    // 
+    // Vim
+    // 
+    //////////////////////////////////////////////////////////////
+
+    "vim.useSystemClipboard": true,
+    "vim.hlsearch": true,
+    "vim.leader": "<Space>",
+
+    "vim.normalModeKeyBindings": [
+        {
+          "before": ["<leader>", "f"],
+          "commands": [
+            {
+              "command": "workbench.action.findInFiles",
+              "args": {
+                "query": "",
+                "replace": "",
+                "isRegex": false,
+                "filesToInclude": "",
+                "filesToExclude": ""
+              }
+            }
+          ]
+        },
+        {
+          "before": ["<leader>", "/"],
+          "commands": ["editor.action.commentLine"],
+        },
+        {
+          "before": ["<leader>", "w"],
+          "commands": ["saveAll"],
+        },
+        {
+          "before": ["<leader>", "w", "q"],
+          "commands": ["saveAll", "workbench.action.quit"],
+        },
+        {
+          "before": ["<leader>", "q"],
+          "commands": ["workbench.action.closeWindow"],
+        },
+        {
+          "before": ["<s-l>"],
+          "commands": ["workbench.action.nextEditor"],
+        },
+        {
+          "before": ["<s-h>"],
+          "commands": ["workbench.action.previousEditor"],
+        },
+        {
+          "before": ["<c-h>"],
+          "commands": ["workbench.action.navigateLeft"],
+        },
+        {
+          "before": ["<c-l>"],
+          "commands": ["workbench.action.navigateRight"],
+        },
+        {
+          "before": ["<c-j>"],
+          "commands": ["workbench.action.navigateUp"],
+        },
+        {
+          "before": ["<c-k>"],
+          "commands": ["workbench.action.navigateDown"],
+        },
+        {
+          "before": ["<leader>", "o"],
+          "commands": ["workbench.files.action.focusFilesExplorer"],
+        },
+      ],
+    "vim.normalModeKeyBindingsNonRecursive": [
+        {
+          "before": ["<leader>", "e"],
+          // "commands": ["workbench.files.action.focusFilesExplorer"],
+          "commands": [
+            // {
+            //   "command": "workbench.files.action.focusFilesExplorer",
+            //   "args": [],
+            //   "when": "sideBarVisible && !filesExplorerFocus && !suggestWidgetVisible && vim.mode != 'Insert'"
+            // },
+            {
+              "command": "nerdtree.unfocusSidebarOrClose",
+              "args": [],
+              "when": "filesExplorerFocus && sideBarVisible"
+            },
+            // {
+            //   "command": "workbench.files.action.focusFilesExplorer",
+            //   "args": [],
+            //   "when": "!sideBarVisible && !suggestWidgetVisible && vim.mode != 'Insert'"
+            // },
+          ],
+        },  
+    ],
+    "vim.visualModeKeyBindings": [
+      {
+        "before": ["<leader>", "/"],
+        "commands": ["editor.action.commentLine"],
+        "when": "editorTextFocus && !editorReadonly"
+      }
+    ],
+    "vim.handleKeys": {
+      "<C-n>": false,
+    }
+}
